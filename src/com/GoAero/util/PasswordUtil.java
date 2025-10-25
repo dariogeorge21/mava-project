@@ -73,7 +73,7 @@ public class PasswordUtil {
      * @return String describing password requirements
      */
     public static String getPasswordRequirements() {
-        return "";
+        return "password must be min 6 characters with letter + number + special character";
     }
 
     /**

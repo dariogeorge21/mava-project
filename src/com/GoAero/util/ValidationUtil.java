@@ -23,11 +23,6 @@ public class ValidationUtil {
     private static final Pattern AIRPORT_CODE_PATTERN = Pattern.compile(
         "^[A-Z]{3,4}$"
     );
-    
-    // Flight code: no regex validation anymore; auto-uppercase only (see formatFlightCode)
-    // private static final Pattern FLIGHT_CODE_PATTERN = Pattern.compile(
-    //     "^[A-Z]{2,3}[0-9]{1,4}$"
-    // );
 
     // Company code pattern (2-5 uppercase letters/numbers)
     private static final Pattern COMPANY_CODE_PATTERN = Pattern.compile(

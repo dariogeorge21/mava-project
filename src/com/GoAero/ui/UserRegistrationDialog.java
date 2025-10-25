@@ -43,7 +43,7 @@ public class UserRegistrationDialog extends JDialog {
     }
 
     private void initializeComponents() {
-        setSize(750, 800);
+        setSize(850, 900);
         setLocationRelativeTo(getParent());
         setResizable(false);
 
@@ -681,8 +681,8 @@ public class UserRegistrationDialog extends JDialog {
 
         // Password requirements
         gbc.gridx = 0; gbc.gridy = 7; gbc.gridwidth = 2;
-        JLabel requirementsLabel = new JLabel("<html><div style='font-size:11px; color:#666;'>" + 
-            PasswordUtil.getPasswordRequirements() + "</div></html>");
+        JLabel requirementsLabel = new JLabel("<html><div style='font-size:10px; color:#666;'>" + 
+            PasswordUtil.getPasswordRequirements());
         formPanel.add(requirementsLabel, gbc);
 
         formWrapper.add(formPanel, BorderLayout.CENTER);
