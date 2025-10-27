@@ -662,47 +662,6 @@ public class FlightManagementPanel extends JPanel {
     }
 
     /**
-     * Custom cell renderer for availability column
-     */
-    private static class AvailabilityCellRenderer extends DefaultTableCellRenderer {
-        @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-                boolean hasFocus, int row, int column) {
-            super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-
-            if (value != null) {
-                setHorizontalAlignment(SwingConstants.CENTER);
-                setFont(new Font("Arial", Font.BOLD, 12));
-                
-                try {
-                    int available = Integer.parseInt(value.toString());
-                    
-                    if (!isSelected) {
-                        if (available > 50) {
-                            setBackground(new Color(232, 245, 233));
-                            setForeground(new Color(27, 94, 32));
-                        } else if (available > 20) {
-                            setBackground(new Color(255, 248, 225));
-                            setForeground(new Color(230, 81, 0));
-                        } else if (available > 0) {
-                            setBackground(new Color(255, 243, 224));
-                            setForeground(new Color(191, 54, 12));
-                        } else {
-                            setBackground(new Color(255, 235, 238));
-                            setForeground(new Color(183, 28, 28));
-                            setText("FULL");
-                        }
-                    }
-                } catch (NumberFormatException e) {
-                    // Handle invalid number format
-                }
-            }
-
-            return this;
-        }
-    }
-
-    /**
      * Creates a modern styled delete confirmation dialog for flights
      */
     private boolean showDeleteConfirmationDialog(Flight flight) {

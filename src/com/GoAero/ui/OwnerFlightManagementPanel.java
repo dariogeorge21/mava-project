@@ -8,7 +8,6 @@ import com.GoAero.model.SessionManager;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -593,38 +592,6 @@ public class OwnerFlightManagementPanel extends JPanel {
         actionPanel.add(infoPanel, BorderLayout.EAST);
 
         return actionPanel;
-    }
-
-    /**
-     * Custom cell renderer for flight availability column
-     */
-    private static class AvailabilityCellRenderer extends DefaultTableCellRenderer {
-        @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-                boolean hasFocus, int row, int column) {
-            super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-
-            if (value != null) {
-                int available = Integer.parseInt(value.toString());
-                setHorizontalAlignment(SwingConstants.CENTER);
-                setFont(new Font("Arial", Font.BOLD, 12));
-
-                if (!isSelected) {
-                    if (available > 20) {
-                        setBackground(new Color(232, 245, 233));
-                        setForeground(new Color(27, 94, 32));
-                    } else if (available > 5) {
-                        setBackground(new Color(255, 248, 225));
-                        setForeground(new Color(230, 81, 0));
-                    } else {
-                        setBackground(new Color(255, 235, 238));
-                        setForeground(new Color(183, 28, 28));
-                    }
-                }
-            }
-
-            return this;
-        }
     }
 
     /**
