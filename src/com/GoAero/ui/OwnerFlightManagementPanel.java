@@ -55,7 +55,7 @@ public class OwnerFlightManagementPanel extends JPanel {
 
     private void initializeComponents() {
         // Modern table setup
-        String[] columnNames = {"Flight Code", "Flight Name", "Route", "Departure", "Arrival", "Price", "Capacity", "Available"};
+        String[] columnNames = {"Flight Code", "Flight Name", "Route", "Departure", "Arrival", "Price", "Capacity"};
         tableModel = new DefaultTableModel(columnNames, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -93,10 +93,6 @@ public class OwnerFlightManagementPanel extends JPanel {
         flightsTable.getColumnModel().getColumn(4).setPreferredWidth(120); // Arrival
         flightsTable.getColumnModel().getColumn(5).setPreferredWidth(90);  // Price
         flightsTable.getColumnModel().getColumn(6).setPreferredWidth(80);  // Capacity
-        flightsTable.getColumnModel().getColumn(7).setPreferredWidth(80);  // Available
-
-        // Add custom cell renderer for availability
-        flightsTable.getColumnModel().getColumn(7).setCellRenderer(new AvailabilityCellRenderer());
 
         // Modern styled buttons with icons
         addFlightButton = createStyledButton("✈ Add Flight", PRIMARY_BLUE, Color.WHITE, 14);
